@@ -1,0 +1,80 @@
+ <!-- <div>
+     <div class="comments">
+          <div class="comment-body" *ngFor="let reply of comments">
+               <div class="comment">{{reply.userName}}</div>
+               <div [innerHTML]="reply.text"></div>
+               <div class="vote">
+                    <app-vote></app-vote>
+
+               </div>
+               <div class="nested">
+
+                    <app-comment-view *ngIf="reply.reply" [comments]="reply.reply"></app-comment-view>
+               </div>
+          </div>
+     </div>
+
+</div>  -->
+
+
+<!-- <div>
+    <div>
+         <div *ngFor="let item0 of comments" > 
+              <div [innerHTML]="item0.text"></div> 
+              <div>
+                   <div *ngFor="let item1 of item0?.reply"> 
+                        <div [innerHTML]="item1.text"></div> 
+                        <div>
+                            <div *ngFor="let item2 of item1?.reply"> 
+                                 <div [innerHTML]="item2.text"></div> 
+                                 <div>
+                                    <div *ngFor="let item3 of item2?.reply"> 
+                                         <div [innerHTML]="item3.text"></div> 
+                                         <div>
+                                            <div *ngFor="let item4 of item3?.reply"> 
+                                                 <div [innerHTML]="item4.text"></div> 
+                                            </div>
+                                       </div>
+                                    </div>
+                               </div>
+                            </div>
+                       </div>
+                   </div>
+              </div>
+         </div>
+    </div>
+</div>  -->
+  <div class="comments">
+     <ng-template #recursiveList let-comments >
+          <div class="comment" *ngFor="let item of comments">
+               
+               <div class="nested ">{{item.userName}} {{item.duration}}
+                    <div class="line">
+                         <div>
+
+                         </div>
+                         <div class="comment-desc">
+                              <div [innerHTML]="item.text"></div>
+                              <div class="vote">
+                                   <app-vote [commentId]="item.id"></app-vote>
+               
+                              </div>
+     
+                         </div>
+
+                    </div>
+               </div>
+                    
+               
+          
+            <div class="comment-body" [id]="''+item.id">
+                <ng-container
+                *ngTemplateOutlet="recursiveList; context:{ $implicit: item.reply }"
+                ></ng-container>
+            </div>
+          </div>
+        </ng-template>
+        <ng-container 
+          *ngTemplateOutlet="recursiveList; context:{ $implicit: comments }"
+        ></ng-container>
+</div>  

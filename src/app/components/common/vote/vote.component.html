@@ -1,0 +1,23 @@
+
+  <div class="icon-up" (click)="clickVoteUp()">
+    <svg
+      id="arrow-up"
+      [ngClass]="{'votedUp': voteUp}"
+      xmlns="http://www.w3.org/2000/svg"
+      transform="rotate(180)"
+      viewBox="0 0 48 48"
+    >
+      <path
+        d="M29.9,6H16.1a2,2,0,0,0-2,2V20.4H6a2,2,0,0,0-1.4,3.5L22.5,43.4a2.2,2.2,0,0,0,3,0L43.4,23.9A2,2,0,0,0,42,20.4H33.9V8a2,2,0,0,0-2-2Z"
+      />
+    </svg>
+  </div>
+  <div class="vote-count" [innerHTML]="count ? count : '&middot'"></div>
+  <div class="icon-down" (click)="clickVoteDown()">
+    <svg id="arrow-down" [ngClass]="{'votedDown': voteDown}" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M29.9,6H16.1a2,2,0,0,0-2,2V20.4H6a2,2,0,0,0-1.4,3.5L22.5,43.4a2.2,2.2,0,0,0,3,0L43.4,23.9A2,2,0,0,0,42,20.4H33.9V8a2,2,0,0,0-2-2Z"
+      />
+    </svg>
+  </div>
+

@@ -1,0 +1,20 @@
+app-post-view {
+  cursor: pointer;
+  display: flex;
+  background-color: #fff;
+  width: 50%;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.post {
+  display: flex;
+  margin-top: 10px;
+}
+app-vote {
+  width: 40px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-top: 20px;
+  background-color: azure;
+}

@@ -1,0 +1,47 @@
+
+.comment{
+    border-left: 1px solid black;
+    
+    
+}
+.hide-comment{
+   border: none;
+  
+    height: max-content;
+    background-color: transparent;
+    
+    
+}
+.hide-comment:hover{
+    border-left: 2px solid red;
+}
+ul{
+    width: 50%;
+}
+.comment-body{
+    margin-left: 30px;
+    
+    
+}
+
+.vote{
+    width: 80px;
+    text-align: center;
+    
+    
+}
+.vote> app-vote{
+    display: flex;
+    
+}
+.nested{
+    background-color: azure;
+    margin-bottom: 10px;
+}
+.line{
+    display: flex;
+    
+}
+.comment-desc{
+    overflow: hidden;
+}

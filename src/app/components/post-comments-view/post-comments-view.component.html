@@ -1,0 +1,10 @@
+<div class="post">
+    <app-vote [postId]="post.id"></app-vote>
+    <app-post-view [post]="post" *ngIf="post"></app-post-view>
+
+
+</div>   
+<div class="comments">
+    <app-comment-view [comments]="comments"></app-comment-view>
+
+</div> 

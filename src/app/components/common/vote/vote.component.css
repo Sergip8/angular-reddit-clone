@@ -1,0 +1,51 @@
+
+
+svg {
+    fill: none;
+    stroke: #bbb;
+    stroke-width: 2px;
+    
+    width: 20px;
+   
+}
+.vote-count{
+    font-size: 12px;
+    font-weight: 600;
+    margin: 3px 5px 0 5px;
+}
+
+.vote{
+    text-align: center;
+}
+#arrow-down> path{
+    width: 5px;
+    height: auto;
+}
+#arrow-down, #arrow-up{
+    cursor: pointer;
+    
+}
+#arrow-down:hover, #arrow-up:hover{
+    background-color: #ddd;
+   
+
+    
+}
+#arrow-down:hover{
+    stroke: #f08282;
+    stroke-width: 3px;
+}
+#arrow-up:hover{
+stroke: #789eb7;
+stroke-width: 3px;
+}
+.votedUp{
+    fill:  #789eb7;
+    stroke: #789eb7;
+    stroke-width: 3px;
+}
+.votedDown{
+    fill: #f08282;
+    stroke: #f08282;
+    stroke-width: 3px;
+}

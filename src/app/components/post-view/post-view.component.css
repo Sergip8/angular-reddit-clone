@@ -1,0 +1,49 @@
+
+.user-name{
+    font-weight: 200;
+    font-size: small;
+    margin-bottom: 10px;
+}
+.title{
+    margin-bottom: 15px;
+}
+.desc{
+    margin-bottom: 15px;
+}
+.post-vote{
+ 
+}
+.vote{
+    width: 50px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+padding-top: 15px;
+}
+.post-view{
+    width: 100%;
+    padding: 10px 10px 0 10px;
+}
+.post-vote-home{
+    background-color: rgb(232, 235, 247);
+}
+.post-body-home{
+    
+}
+.post-container-home{
+    border-radius: 10px;
+}
+.post-comment-btn:hover{
+    border-radius: 3px;
+    padding: 5px 2px 5px 2px;
+    background-color: #ccc;
+
+}
+.post-comment-btn{
+    border-radius: 3px;
+    padding: 5px 2px 5px 2px;
+    margin-bottom: 4px;
+    display:inline-block;
+   
+    
+}
