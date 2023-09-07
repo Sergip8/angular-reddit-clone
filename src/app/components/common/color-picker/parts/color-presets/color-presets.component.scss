@@ -1,0 +1,17 @@
+:host {
+    display: block;
+    font-size: 0;
+
+    .presets-row {
+        display: flex;
+    }
+
+    .presets-row:first-child {
+        padding: 0;
+    }
+}
+
+color-preset-sublist:first-child,
+color-preset:first-child {
+    margin: 0;
+}

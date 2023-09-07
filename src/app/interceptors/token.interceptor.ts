@@ -25,12 +25,11 @@ export class TokenInterceptor implements HttpInterceptor {
         req = req.clone({
           withCredentials: true,
         });
-     
-        
+               
           return next.handle(req).pipe(
             catchError((error) =>{
               if (error instanceof HttpErrorResponse
-                && error.status === 403 || error.status === 401) {
+                &&  !req.url.includes('/login') || error.status === 401) {
                 return this.handleAuthErrors(req, next);
               
                 }
@@ -40,16 +39,14 @@ export class TokenInterceptor implements HttpInterceptor {
           );
           }
     
-
-    
-
-
   private handleAuthErrors(req: HttpRequest<any>, next: HttpHandler)
       : Observable<HttpEvent<any>> {
       if (!this.isTokenRefreshing) {
           this.isTokenRefreshing = true;
           this.refreshTokenSubject.next(null);
+          const token = this.authService.getRefreshToken();
 
+      if (token)
           return this.authService.refreshToken().pipe(
               switchMap((refreshTokenResponse: LoginResponse) => {
                   this.isTokenRefreshing = false;
@@ -70,7 +67,6 @@ export class TokenInterceptor implements HttpInterceptor {
           );
       }
   }
-
   addToken(req: HttpRequest<any>, jwtToken: any) {
       return req.clone({
           headers: req.headers.set('Authorization',

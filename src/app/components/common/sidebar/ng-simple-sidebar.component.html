@@ -1,0 +1,42 @@
+
+<div>
+
+    <div class="sidebar-header" #closeOpen>
+        <div  (click)="closeSidebar()" class="menu-opener pointer" *ngIf="(isOpen$ | async) ">
+            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Menu / Close_LG">
+                <path id="Vector" d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                </svg>
+    
+        </div>
+        <div  (click)="openSidebar()" class="menu-opener pointer"  *ngIf="!(isOpen$ | async) ">
+            <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path fill="#000000" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
+              </svg>
+        </div>
+    </div>
+    <div
+        *ngIf="configuration$ | async as conf"
+        class="dock"
+        [ngClass]="{ 'dock-open': isOpen$ | async, 'dock-mobile': conf.mobile }"
+        [ngStyle]="dockStyle$ | async"
+    >
+        <span *ngIf="conf.mobile && conf.mobileTitle">{{ conf.mobileTitle }}</span>
+    
+        <!-- default items, like open/bottom buttons -->
+        <lib-sidebar-container
+            id="sidebar-container"
+            [configuration]="configuration$ | async "
+            [itemsBottom]="itemsBottom$ | async"
+            [itemsTop]="itemsTop$ | async"
+            [isOpen]="isOpen$ | async"
+            [colors]="colors$ | async"
+            [ngStyle]="sidedbarStyle$ | async"
+            (closeDock)="closeSidebar()"
+           (openDock)="openSidebar()"
+        ></lib-sidebar-container>
+       
+</div>
+</div>
+

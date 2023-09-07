@@ -1,28 +1,53 @@
 app-post-view {
-    cursor: pointer;
-    display: flex;
+    
     background-color: #fff;
     
     
     border-top-right-radius: 10px;
   }
   .comments{
-     width: 50%;
+     width: 80%;
     background-color: #fff;
     padding: 10px;
   }
+.modal{
+  display: flex;
+  flex-direction: column;
+ z-index: 1;
+ 
 
+}
+.modal-backdrop{
+  z-index: 1;
+}
+.post-editor{
+  flex-direction: column;
+  width: 100%;
+}
 app-vote {
     width: 40px;
-    text-align: center;
+    
     border-top-left-radius: 10px;
     
-    padding: 15px 0 0 10px;
+   
     background-color: #fff;
   }
   .post {
     display: flex;
     margin-top: 10px;
-    width: 50%;
+    width: 80%;
   }
+  .rich-txt{
+    width: 80%;
+    background-color: #fff;
+    padding: 20px 0 20px 0;
+    text-align: end;
+   
+  }
+  .rich-txt >app-rich-text-editor{
+    margin: 0 10px 0 40px;
+    display: block;
+    
+  }
+  
   

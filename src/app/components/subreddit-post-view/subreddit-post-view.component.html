@@ -1,0 +1,24 @@
+<div *ngIf="subredditInfo" class="banner" [style.background]="subredditInfo.style">
+
+</div>
+<div class="text-center title">
+    <span>{{subredditInfo?.name[0].toUpperCase() + subredditInfo?.name.slice(1)}}</span>
+    <span><button class="suscribe" (click)="suscribeSubreddit()">Unirse</button></span>
+</div>
+<div class="container">
+    <div class="subreddit-post d-flex justify-content-around ">
+        <div class="post-vote ">
+            <div *ngFor="let post of posts" >
+                <div class="post">
+                    
+                    <app-vote [postId]="post.id"></app-vote>
+                    <app-post-view [post]="post" [style]="style"></app-post-view>
+                </div>
+            </div>
+        </div>
+        <div class=" sub-info">
+            <app-subreddit-about-card *ngIf="subredditInfo" [subredditInfo]="subredditInfo"></app-subreddit-about-card>
+        </div>
+    </div>
+
+</div>

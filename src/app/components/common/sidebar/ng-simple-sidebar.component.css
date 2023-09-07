@@ -1,0 +1,88 @@
+.dock {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    margin-left: -250px;
+    transition: margin-left 0.2s;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+}
+
+.dock-open {
+   
+    margin-left: 0px;
+}
+
+lib-sidebar-container {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+   
+}
+lib-sidebar-container *,
+lib-sidebar-container *::before,
+lib-sidebar-container *::after {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+}
+.sidebar-header{
+    position: fixed;
+    left: 130px;
+    top: 4px;
+    z-index: 1100 !important;
+}
+
+.sidebar-container,
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-container {
+    flex-grow: 1;
+}
+
+.sidebar-container-end {
+    justify-content: flex-end;
+}
+
+.menu-opener {
+    font-size: 30px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* mobile mode */
+.dock-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 2rem;
+}
+
+.dock-mobile .sidebar-header,
+.dock-mobile .sidebar-container {
+    flex-direction: row-reverse;
+}
+
+.dock-mobile lib-sidebar-container {
+    position: fixed;
+    display: none;
+}
+
+.dock-open.dock-mobile lib-sidebar-container {
+    display: flex;
+    padding: 50px;
+    top: 60px;
+    left: 0;
+    opacity: 0.9;
+    
+}

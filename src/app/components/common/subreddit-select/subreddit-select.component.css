@@ -1,0 +1,76 @@
+.input-result{
+    
+}
+
+.input-search{
+    display: flex;
+    outline: none;
+    align-items: center;
+    
+}
+
+.input-search > input {
+    border: 1px solid #ddd;
+    border-right: none;
+    padding: 5px;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-indent: 5px;
+    width: 100% ;
+    color: rgba(0,0,0,0.6);;
+    
+}
+
+.input-arrow{
+    border: 1px solid #ddd;
+    border-left: none;
+    background-color: #fff;
+    padding: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.input-search > input:focus +.input-arrow{
+    border: 1px solid black;
+    border-left: none;
+}
+.input-search > input:focus{
+    outline: none;
+    border: 1px solid black;
+    border-right: none;
+}
+.result{
+    padding: 5px;
+    cursor: pointer;
+   
+}
+.results{
+    padding: 5px;
+    width: 50%;
+   
+    background-color: #fff;
+    position: absolute;
+    z-index: 1;
+    
+}
+.subreddit-selected{
+    position: absolute;
+    z-index: 1;
+    margin-left: 10px;
+    background-color: beige;
+    border-radius: 20px;
+    padding: 0 10px 3px 12px;
+    margin-bottom: 1px;
+    
+}
+.subreddit-selected >span{
+    
+   margin-left: 5px;
+    cursor: pointer;
+    
+}
+.subreddit-selected >span >svg:hover{
+    border-radius: 50%;
+    background-color: #ddd;
+ }

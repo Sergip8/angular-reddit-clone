@@ -38,7 +38,7 @@ export class VoteComponent implements OnInit {
    
       this.voteService.getVotes(this.vclassId, this.vclass).subscribe({
         next: (votes) => {
-          console.log(votes)
+          
           this.count = votes.count;
           this.id = votes.id;
           this.voteUser = votes.voteByUser;

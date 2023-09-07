@@ -1,0 +1,51 @@
+app-post-view {
+    cursor: pointer;
+  
+    background-color: #fff;
+   width: 95%;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .post {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .title span{
+    font-size: 40px;
+  }
+  .banner{
+    width: 100%;
+    height: 100px;
+  }
+  .suscribe{
+    background-color: #c84545;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    margin-left: 20px;
+    
+  }
+  .suscribe:hover{
+    background-color: #d11f1f;
+  }
+  app-vote {
+    width: 40px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-top: 20px;
+    background-color: rgb(243, 244, 220);
+  }
+
+  .post-vote{
+    width: 60%;
+  }
+  .sub-info{
+    width: 30%;
+  }
+  .subreddit-post{
+    margin-top: 20px;
+  }
+
+  

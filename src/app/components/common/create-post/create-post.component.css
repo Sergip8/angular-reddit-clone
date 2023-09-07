@@ -1,0 +1,33 @@
+.container {
+  margin-top: 100px;
+}
+.title > textarea {
+  width: 100%;
+  display: inline-block;
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+.title > textarea::content {
+  padding: 5px 70px 0 10px;
+}
+.title > textarea:focus {
+  border: 1px solid #999;
+}
+.title {
+  width: 100%;
+  position: relative;
+  float: left;
+}
+.title::after {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  color: #888;
+  content: attr(id);
+}
+.subreddit-select{
+  width: 30%;
+  overflow: hidden;
+}

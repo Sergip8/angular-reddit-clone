@@ -1,0 +1,29 @@
+<div class="sub-info-card">
+    <div class="header" [style.background]="subredditInfo.style">
+        <h4>Acerca de la comunidad</h4>
+        
+    </div>
+    <div class="body">
+        <p>{{subredditInfo?.description}}</p>
+        <div class="mb-2">
+            {{created}}
+        </div>
+        <div class="users">
+            <div>
+                Miembros
+            </div>
+            <div>
+                {{subredditInfo.usersSubscribed}}
+            </div>
+            
+        </div>
+        <div class="footer">
+            <button (click)="goToCreatePost()">
+                Publicar
+            </button>
+        </div>
+
+    </div>
+    
+</div>
+

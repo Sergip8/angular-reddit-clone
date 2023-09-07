@@ -1,8 +1,8 @@
 
 .comment{
-    border-left: 1px solid black;
     
-    
+    overflow: hidden;
+    display: flex;
 }
 .hide-comment{
    border: none;
@@ -19,10 +19,33 @@ ul{
     width: 50%;
 }
 .comment-body{
-    margin-left: 30px;
+    margin-left: 10px;
     
     
 }
+.line{
+    text-align: start;
+}
+.line >svg {
+    width: 10px;
+    height: 100%;
+    cursor: pointer;
+
+}
+.line-reply{
+   
+}
+.line-reply >svg {
+    width: 10px;
+    height: 100%;
+    cursor: pointer;
+
+}
+.comment-line{
+    display: flex;
+    
+}
+
 
 .vote{
     width: 80px;
@@ -36,12 +59,39 @@ ul{
 }
 .nested{
     background-color: azure;
-    margin-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
 }
-.line{
-    display: flex;
+.comment-body{
+    flex-direction: column;
     
 }
 .comment-desc{
     overflow: hidden;
 }
+app-rich-text-editor{
+    margin: 10px 10px 0 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+.comment-bar{
+    margin: 10px 0 10px 0;
+    display: flex;
+   
+}
+.reply >span{
+    background-color: #eee;    
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.comment-head{
+   z-index: 10;
+   background-color: #fff;
+   height: 30px;
+   display: block;
+}
+
+/* .comment-box{
+    display: none;
+} */

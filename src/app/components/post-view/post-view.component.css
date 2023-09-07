@@ -16,9 +16,7 @@
 .vote{
     width: 50px;
     text-align: center;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-padding-top: 15px;
+ 
 }
 .post-view{
     width: 100%;
@@ -31,7 +29,7 @@ padding-top: 15px;
     
 }
 .post-container-home{
-    border-radius: 10px;
+   
 }
 .post-comment-btn:hover{
     border-radius: 3px;

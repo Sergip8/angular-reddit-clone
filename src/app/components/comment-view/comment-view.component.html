@@ -1,4 +1,4 @@
- <!-- <div>
+<!-- <div>
      <div class="comments">
           <div class="comment-body" *ngFor="let reply of comments">
                <div class="comment">{{reply.userName}}</div>
@@ -15,7 +15,6 @@
      </div>
 
 </div>  -->
-
 
 <!-- <div>
     <div>
@@ -44,7 +43,7 @@
          </div>
     </div>
 </div>  -->
-  <div class="comments">
+<!-- <div class="comments">
      <ng-template #recursiveList let-comments >
           <div class="comment" *ngFor="let item of comments">
                
@@ -55,9 +54,19 @@
                          </div>
                          <div class="comment-desc">
                               <div [innerHTML]="item.text"></div>
-                              <div class="vote">
-                                   <app-vote [commentId]="item.id"></app-vote>
-               
+                              <div class="comment-bar">
+                                   
+                                   <div class="vote">
+                                        <app-vote [commentId]="item.id"></app-vote>
+                    
+                                   </div>
+                                   <div class="reply">
+                                        <span type="buttom" (click)="showCommentBox(item.id)">Comentar</span>
+                                   </div>
+                              </div>
+                              <div [id]="'reply'+item.id" class="comment-box" [style.display]="'none'">
+                                   <div></div>
+                                   <app-rich-text-editor (description)="commentReq($event, item.id, item.position)"></app-rich-text-editor>
                               </div>
      
                          </div>
@@ -77,4 +86,81 @@
         <ng-container 
           *ngTemplateOutlet="recursiveList; context:{ $implicit: comments }"
         ></ng-container>
-</div>  
+</div>   -->
+<div>
+  <div class="comment" *ngFor="let item of comments; let i = index">
+    <div class="nested" [id]="'hide'+i">
+      <div >
+        
+      </div>
+      
+      <div class="comment-line">
+        <div
+        class="line-reply"
+        *ngFor="let num of [].constructor(item.position+1); let j = index "
+        (click)="hideComments(i,j)"
+        [style.margin-right.px]="10"
+        [ngClass]="j == item.position? 'c'+j+item.id:''"
+        >
+        
+        <svg
+        width="9cm"
+        height="10cm"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        (mouseover)="hoverThread()"
+        >
+        <path [class]="'path'+j" d="M0,500 v-500" fill="yellow" stroke="#ccc" stroke-width="3" />
+      </svg>
+    </div>
+    
+    <div class="comment-body" >
+      <div [style.margin-left.px]="-30" class="comment-head">
+        {{item.userName}} {{item.duration}}
+        
+      </div>
+      <div class="comment-desc" [id]="'hide-head'+i+item.position">
+        <br>
+        <div [innerHTML]="item.text"></div>
+        <div class="comment-bar">
+          <div class="vote">
+            <app-vote [commentId]="item.id"></app-vote>
+          </div>
+          <div class="reply">
+            <span type="buttom" (click)="showCommentBox(item.id)"
+            >Comentar</span
+            >
+          </div>
+        </div>
+        <div
+        [id]="'reply'+item.id"
+        class="comment-box"
+        [style.display]="'none'"
+        >
+        <div></div>
+        <app-rich-text-editor
+        (description)="commentReq($event, item.id, item.position)"
+        ></app-rich-text-editor>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- <div class="line" (click)="hideComments(i)">
+  <svg
+  width="9cm"
+  height="10cm"
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.1"
+  >
+  <path
+  d="M0,150 v-150"
+  fill="yellow"
+  stroke="#ccc"
+  stroke-width="3"
+  />
+</svg>
+</div> -->

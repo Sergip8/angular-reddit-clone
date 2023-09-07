@@ -1,10 +1,57 @@
-<div class="post">
+<div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
+<div class="modal modal-xl d-block fade" 
+  [ngClass]="{ show: showModal }"
+  (click)="onClose()"
+  id="listing-dialog" 
+  tabindex="-1" role="dialog" aria-labelledby="modalIdLabel">
+    <div class="modal-dialog " role="document" (click)="onDialogClick($event)">
+        <div class="modal-content ">
+            <button type="button"
+            class="close"
+            (click)="onClose()"
+            aria-label="Close"><span aria-hidden="true">&times;</span>
+        </button>
+            <div class="modal-header">
+                <div class="post-editor">
+                    <div class="post" *ngIf="post">
+                        <app-vote [postId]="post.id"></app-vote>
+                        <app-post-view [post]="post" *ngIf="post"></app-post-view>
+                        
+                    </div>
+                       
+                    <div class="rich-txt">
+                        <app-rich-text-editor (description)="commentSubmit($event)"></app-rich-text-editor>
+                        
+                    </div>
+
+                </div>
+               
+            </div>
+            <div class="modal-body">
+                <div class="comments">
+                    <app-comment-view (commentRes)="comment($event)" [comments]="comments"></app-comment-view>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="post" *ngIf="post">
     <app-vote [postId]="post.id"></app-vote>
     <app-post-view [post]="post" *ngIf="post"></app-post-view>
-
-
-</div>   
+    
+</div>
+   
+<div class="rich-txt">
+    <app-rich-text-editor (description)="commentSubmit($event)"></app-rich-text-editor>
+    
+</div>
 <div class="comments">
-    <app-comment-view [comments]="comments"></app-comment-view>
+    <app-comment-view (commentRes)="comment($event)" [comments]="comments"></app-comment-view>
 
-</div> 
+</div>  -->

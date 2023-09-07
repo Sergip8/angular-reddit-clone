@@ -6,6 +6,7 @@ import { LoginResponse } from '../models/login-response';
 import { SignupRequest } from '../models/signup-request';
 import { JwtHelperService} from '@auth0/angular-jwt';
 import { GlobalConst } from '../global-const';
+import { ResponseModel } from '../models/response-model';
 
 const httpOptions = {
   headers: new HttpHeaders({ 
@@ -19,6 +20,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+ 
   
   
   refreshTokenPayload = {
@@ -94,7 +96,7 @@ export class AuthService {
   }
 
   getUserName() {
-    return localStorage.getItem('username');
+    return localStorage.getItem('username')
   }
   getRefreshToken() {
     return localStorage.getItem('refreshToken');
@@ -116,5 +118,10 @@ export class AuthService {
     return this.loggedIn.value
   }
 
-
+  subscribeSubreddit(subreddit: string){
+   return this.http.get<ResponseModel>(GlobalConst.baseUrl+"/userAuth/subscribe/r/"+ subreddit )
+  }
+  getSubscriptions() {
+   return this.http.get<string[]>(GlobalConst.baseUrl+"/userAuth/subs"); 
+  }
 }

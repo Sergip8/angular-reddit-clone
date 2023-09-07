@@ -1,0 +1,33 @@
+.sub-info-card{
+    
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.header{
+    padding: 10px 5px 10px 5px;
+    height: 50px;
+    
+}
+.body{
+    padding: 10px 5px 10px 5px;
+}
+.users{
+    width: fit-content;
+    text-align: center;
+}
+
+.footer{
+    padding-top: 20px;
+    text-align: center;
+}
+.footer button{
+    
+    border: none;
+    background-color: #acdcfc;
+    width: 90%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    font-weight: 700;
+}

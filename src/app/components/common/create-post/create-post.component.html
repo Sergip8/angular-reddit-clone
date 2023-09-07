@@ -1,1 +1,21 @@
-<p>create-post works!</p>
+
+<div class="container">
+<div class="subreddit-select">
+    <app-subreddit-select (subreddit)="subreddit($event)" [subredditName]="subredditName"></app-subreddit-select>
+    
+</div>
+    <br>
+    <form [formGroup]="postTitle">
+        <div class="title" id="{{title.value.length}}/300">
+            <textarea formControlName="title" autosize name="title" maxlength="300"
+            #title type="text" placeholder="titulo"></textarea>
+           
+        </div>
+
+    </form>
+<app-rich-text-editor [desc]="desc" (descriptionPost)="description($event)"></app-rich-text-editor>
+<div>
+    <button [disabled]="postTitle.invalid" (click)="savePost()">Publicar</button>
+</div>
+</div>
+

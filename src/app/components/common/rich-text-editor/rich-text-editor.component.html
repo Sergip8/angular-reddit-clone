@@ -1,0 +1,49 @@
+<form [formGroup]="inputDesc">
+
+  <quill-editor 
+    placeholder="{{placeholder}}"
+    #postDesc
+    [customToolbarPosition]="desc ? 'top': 'bottom'"
+    formControlName="description"
+    >
+    <div class="toolbar" quill-editor-toolbar>
+      <div class="gggg">
+  
+        <span class="ql-formats">
+          <button class="ql-bold"></button>
+          <button class="ql-italic"></button>
+          <button class="ql-underline"></button>
+          <button class="ql-strike"></button>
+          <button class="ql-code-block"></button>
+          <button class="ql-blockquote"></button>
+    
+    
+        </span>
+        <span class="ql-formats">
+          <button class="ql-script" value="sub"></button>
+          <button class="ql-script" value="super"></button>
+        </span>
+        <span class="ql-formats" [style.margin-bottom.px]="6">
+          <select class="ql-align" [title]="'Aligment'">
+            <option selected></option>
+            <option value="center"></option>
+            <option value="right"></option>
+            <option value="justify"></option>
+          </select>
+          
+        </span>
+        <span  [hidden]="!desc">
+          <button class="ql-link"></button>
+          <button class="ql-video"></button>
+          <button class="ql-image"></button>
+          
+        </span>
+      </div>
+      <div class="toolbar-btn" [hidden]="desc">
+        <button id="comment-text" (click)="sendComment()" [disabled]="inputDesc.invalid">comentar</button>
+      </div>
+      
+      
+    </div>
+  </quill-editor>
+</form>

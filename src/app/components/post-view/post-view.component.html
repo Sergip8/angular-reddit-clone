@@ -1,16 +1,14 @@
-<div  class="post-vote" [ngClass]="style? style[2]: ''">
-
-    <div class="post-view">
-        <div  class="user-name">publicado por {{post.userName}} {{post.duration}}</div>
-        <div class="title">
-            <h3>{{post.postName}}</h3>
-        </div>
-        <div class="desc">
-            <span>{{post.description}}</span>
-        </div>
-        <div >
-            <div [ngClass]="style? style[3]: ''">Comentarios: {{post.commentCount}}</div>
-        </div>
-    
+<div class="post-vote" [ngClass]="style? style[2]: ''">
+  <div (click)=" navigateTo(post)">
+    <div class="user-name">publicado por {{post.userName}} {{timeCreated}}</div>
+    <div class="title">
+      <h3>{{post.postName}}</h3>
     </div>
+    <div class="desc" [innerHTML]="post.description"></div>
+    <div>
+      <div [ngClass]="style? style[3]: ''">
+        Comentarios: {{post.commentCount}}
+      </div>
+    </div>
+  </div>
 </div>

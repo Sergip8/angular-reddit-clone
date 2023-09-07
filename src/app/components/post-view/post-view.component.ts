@@ -13,17 +13,20 @@ export class PostViewComponent implements OnInit {
 
   @Input() post!: PostRequest
   @Input() style!: string[]
+  timeCreated?: string
 
-  constructor(private postService: PostService) { 
+  constructor(private postService: PostService, private router: Router,) { 
     //private activedRoute: ActivatedRoute, 
    // this.postId = activedRoute.snapshot.params['id']
-
-  }
-
-  ngOnInit(): void {
     
   }
 
-  
+  ngOnInit(): void {
+    this.timeCreated = TimeCreated.getDateOfCreation(this.post?.duration)
+  }
+
+  navigateTo(post: PostRequest) {
+    this.router.navigate([`/r/${post.subredditName}/post`, post.id]);
+  }
 
 }
